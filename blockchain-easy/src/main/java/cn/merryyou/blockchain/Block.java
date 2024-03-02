@@ -1,21 +1,16 @@
 package cn.merryyou.blockchain;
 
-import cn.merryyou.blockchain.util.StringUtil;
+import cn.merryyou.blockchain.util.HashUtil;
 
 import java.util.Date;
 
 /**
- * 区块
- * Created on 2018/3/10 0010.
- *
- * @author zlf
- * @email i@merryyou.cn
- * @since 1.0
+ * 单个区块，包含自身hash值，存储的data,下一个区块的hash值
  */
 public class Block {
 
     /**
-     * 当前区块的hash
+     * 当前区块的hash(通过之前hash值和data通过hash计算出来，前一个区块数据篡改，则此区块的hash值也需做修改)
      */
     public String hash;
 
@@ -34,8 +29,6 @@ public class Block {
      */
     private long timeStamp;
 
-    private int nonce;
-
 
     public Block(String hash, String previousHash, String data) {
         this.hash = hash;
@@ -51,18 +44,16 @@ public class Block {
     }
 
     public String calculateHash() {
-        String calculatedhash = StringUtil.applySha256(
+        String calculatedhash = HashUtil.applySha256(
                 previousHash +
                         Long.toString(timeStamp) +
-                        Integer.toString(nonce) +
                         data);
         return calculatedhash;
     }
 
     public void mineBlock(int difficulty) {
         String target = new String(new char[difficulty]).replace('\0', '0'); //Create a string with difficulty * "0"
-        while(!hash.substring( 0, difficulty).equals(target)) {
-            nonce ++;
+        while (!hash.substring(0, difficulty).equals(target)) {
             hash = calculateHash();
         }
         System.out.println("Block Mined!!! : " + hash);
