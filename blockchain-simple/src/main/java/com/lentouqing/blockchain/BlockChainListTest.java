@@ -1,4 +1,4 @@
-package cn.merryyou.blockchain;
+package com.lentouqing.blockchain;
 
 import com.google.gson.GsonBuilder;
 

@@ -1,4 +1,4 @@
-package cn.merryyou.blockchain.util;
+package com.lentouqing.blockchain.util;
 
 import org.apache.commons.codec.binary.Hex;
 

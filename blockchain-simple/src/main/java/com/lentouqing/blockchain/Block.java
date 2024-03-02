@@ -1,6 +1,6 @@
-package cn.merryyou.blockchain;
+package com.lentouqing.blockchain;
 
-import cn.merryyou.blockchain.util.HashUtil;
+import com.lentouqing.blockchain.util.HashUtil;
 
 import java.util.Date;
 
