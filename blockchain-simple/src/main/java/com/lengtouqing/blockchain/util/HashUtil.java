@@ -1,4 +1,4 @@
-package com.lentouqing.blockchain.util;
+package com.lengtouqing.blockchain.util;
 
 import org.apache.commons.codec.binary.Hex;
 

@@ -1,8 +1,6 @@
-package com.lentouqing.blockchain;
+package com.lengtouqing.blockchain;
 
-import com.lentouqing.blockchain.util.HashUtil;
-
-import java.util.Date;
+import com.lengtouqing.blockchain.util.HashUtil;
 
 /**
  * 单个区块，包含自身hash值，存储的data,下一个区块的hash值

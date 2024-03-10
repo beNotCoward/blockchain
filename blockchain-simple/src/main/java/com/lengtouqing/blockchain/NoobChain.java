@@ -1,4 +1,4 @@
-package com.lentouqing.blockchain;
+package com.lengtouqing.blockchain;
 
 import com.google.gson.GsonBuilder;
 
